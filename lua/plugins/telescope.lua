@@ -10,12 +10,24 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find with grep' })
         vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Find keymaps' })
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find in help'})
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
 
         vim.keymap.set('n', '<leader>fn',
             function()
                 builtin.find_files { cwd = vim.fn.stdpath 'config' }
             end,
-            { desc = 'Find Neovim files' })
+            { desc = 'Find Neovim files' }
+        )
+
+        require('telescope').setup({
+            defaults = {
+                file_ignore_patterns = {
+                    'lazy%-lock.json',
+                    '.git/',
+                    '.git\\',
+                },
+            }
+        })
 
     end
 }

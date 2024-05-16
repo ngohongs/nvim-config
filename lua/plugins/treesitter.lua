@@ -5,6 +5,7 @@ return {
         require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
         local configs = require("nvim-treesitter.configs")
         configs.setup({
+            auto_install = true,
             ensure_installed = {
                 "vimdoc",
                 "c",

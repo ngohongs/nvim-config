@@ -7,6 +7,9 @@ vim.g.maplocalleader = ' '
 -- If Nerd Font is installed for the terminal
 vim.g.have_nerd_font = true
 
+-- Enable break indent
+vim.opt.breakindent = true
+
 -- Replace tabs with 4 spaces
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -37,6 +40,9 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+
+-- Decreate mapped sequence wait time
+vim.opt.timeoutlen = 300
 
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd('TextYankPost', {
