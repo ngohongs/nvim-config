@@ -1,8 +1,10 @@
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
-    dependencies = { 
-        "nvim-lua/plenary.nvim"
+    dependencies = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-telescope/telescope-ui-select.nvim" },
+        { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     config = function()
         local builtin = require('telescope.builtin')
@@ -35,8 +37,16 @@ return {
                     '.git/',
                     '.git\\',
                 },
-            }
+            },
+            extensions = {
+                ['ui-select'] = {
+                    require('telescope.themes').get_dropdown(),
+                },
+            },
+
         })
 
+        -- Enable Telescope extensionsif they are installed
+        pcall(require('telescope').load_extension, 'ui-select')
     end
 }
