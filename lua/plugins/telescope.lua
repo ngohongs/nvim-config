@@ -19,6 +19,15 @@ return {
             { desc = 'Find Neovim files' }
         )
 
+        vim.keymap.set('n', '<leader>/', function()
+            builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+                windblend = 10,
+                previewer = false,
+            })
+            end,
+            { desc = 'Fuzzy search in current buffer' }
+        )
+
         require('telescope').setup({
             defaults = {
                 file_ignore_patterns = {
