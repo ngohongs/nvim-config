@@ -61,11 +61,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
-
--- Indent blankline
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-
 --
 --
 --
