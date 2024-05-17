@@ -94,5 +94,5 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.api.nvim_set_keymap("n", "<C-x>", ":close<CR>", { noremap = true })
 
 -- Folding
-vim.keymap.set("n", "zc", "<cmd>foldclose<CR>", { desc = "Close code fold" })
-vim.keymap.set("n", "zo", "<cmd>foldopen<CR>", { desc = "Open code fold" })
+vim.keymap.set("n", "zm", "<cmd>foldclose<CR>", { desc = "Close code fold" })
+vim.keymap.set("n", "zr", "<cmd>foldopen<CR>", { desc = "Open code fold" })

@@ -14,7 +14,6 @@ return {
 				"cmake",
 				"rust",
 				"lua",
-				"c_sharp",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
