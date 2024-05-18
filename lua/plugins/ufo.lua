@@ -68,6 +68,12 @@ return {
 
         local builtin = require("statuscol.builtin")
         require("statuscol").setup({
+            ft_ignore = {
+                "neo-tree",
+            },
+            bt_ingore = {
+                "neo-tree",
+            },
             segments = {
                 { text = { "%s" }, click = "v:lua.ScSa" },
                 { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
