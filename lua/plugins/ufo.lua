@@ -66,13 +66,22 @@ return {
             end,
         })
 
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "trouble", "neo-tree" },
+            callback = function()
+                require("ufo").detach()
+                vim.opt_local.foldenable = false
+                vim.wo.foldcolumn = "0"
+            end
+        })
+
         local builtin = require("statuscol.builtin")
         require("statuscol").setup({
             ft_ignore = {
-                "neo-tree",
+                "neo-tree", "trouble",
             },
             bt_ingore = {
-                "neo-tree",
+                "neo-tree", "trouble",
             },
             segments = {
                 { text = { "%s" }, click = "v:lua.ScSa" },
