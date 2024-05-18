@@ -31,6 +31,18 @@ return {
             {text = "󰌵", texthl = "DiagnosticSignHint"})
 
         require("neo-tree").setup({
+            event_handlers = {
+                {
+                    event = "vim_buffer_enter",
+                    handler = function(arg)
+                        if vim.bo.filetype == "neo-tree" then
+                            require("ufo").detach()
+                            vim.opt_local.foldenable = false
+                            vim.wo.foldcolumn = "0"
+                        end
+                    end
+                }
+            },
             close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
             popup_border_style = "rounded",
             enable_git_status = true,
