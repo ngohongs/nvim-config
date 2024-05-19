@@ -11,7 +11,6 @@ return {
             }
         })
 
-        -- vim.cmd[[hi TroubleText guibg=none]]
         vim.cmd.colorscheme("dracula")
     end,
 }
