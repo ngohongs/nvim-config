@@ -1,5 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+        {
+            "nvim-treesitter/playground",
+        },
+    },
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.install").compilers = { "clang", "gcc" }
@@ -17,6 +22,12 @@ return {
             },
             highlight = { enable = true },
             indent = { enable = true },
+        })
+
+        require("nvim-treesitter.configs").setup({
+            playground = {
+                enabled = true,
+            }
         })
     end,
 }
